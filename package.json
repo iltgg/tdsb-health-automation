@@ -1,0 +1,16 @@
+{
+  "name": "health-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "login": "node ./test/get-login-cookies.js",
+    "complete": "node ./test/health-complete.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^10.2.0"
+  }
+}
