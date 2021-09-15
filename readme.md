@@ -66,5 +66,10 @@ gcloud functions deploy healthComplete --runtime nodejs12 --trigger-topic auto-c
 Create a Cloud Scheduler job that will run the function
 
 Cron job schedule function to fire at 06:00 on every day-of-week from Monday through Friday:  `0 6 * * MON-FRI`
+
+## Disclaimer
+
+This is is only for educational purposes, do not use for anything that may violate safety guidelines concerning COVID-19.
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
