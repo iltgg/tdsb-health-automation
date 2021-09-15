@@ -29,7 +29,7 @@ let getLoginCookies = async () => {
     await page.waitForNavigation();
     await page.waitForTimeout(1000);
     const cookies = await page.cookies('https://login.microsoftonline.com');
-    await fs.writeFile('./test/cookies.json', JSON.stringify(cookies, null, 2));
+    await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
 }
 
 getLoginCookies();
