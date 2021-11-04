@@ -1,6 +1,6 @@
 # tdsb-health-automation
 
-tdsb-health-automation is a node program that runs puppeteer to automatically complete the COVID-19 health check in. It can be deployed to a Google Cloud function and set to run every morning with cloud scheduler. It can also send a notification via IFTTT webhooks of the completion status.
+tdsb-health-automation is a node program that runs puppeteer to automatically complete the COVID-19 health check in. It can be deployed to a Google Cloud function and set to run every morning with cloud scheduler. It can also send a notification via IFTTT using webhooks and the IFTTT app of the completion status.
 
 ## Installation
 
@@ -19,9 +19,11 @@ Install the Google Cloud SDK
 
 If using IFTTT create a new applet with the following settings:
 
-If "Receive a web request with a JSON payload", name the event anything
+If "Receive a web request with a JSON payload", name the event `form_submit`
 
 Then "Send a rich notification from the IFTTT app", in message add the JsonPayload ingredient
+
+Install the IFTTT app to receive the notifications.
 
 ### Setup
 
@@ -65,15 +67,13 @@ This should create a `screenshot.png` in the test directory, if it shows the com
 
 ## Setup 2
 
-Copy the `example_data.js` file and rename it to `data.js`.
+Copy the `example_data.js` file and rename it to `data.js`, this stores the private information in a file not tracked with git.
 
-Replace the empty `COOKIES` array with the contents of the the `cookies.json` file, and the empty `IFTTTKEY` string with your IFTTT.
+Replace the empty `COOKIES` array with the contents of the the `cookies.json` file (enure the array contains valid javascript objects), and the empty `IFTTTKEY` string with your IFTTT key.
 
 In `index.js` change `SENDNOTIFICATION` to false if not using IFTTT.
 
 ### Cloud deployment
-
-Copy the cookies to the `cookiesString` in `index.js` at the root of the project.
 
 Create a Pub/Sub topic:
 
