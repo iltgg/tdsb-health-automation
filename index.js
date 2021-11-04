@@ -14,8 +14,7 @@ exports.healthComplete = async (message, context) => {
 
   let healthComplete = async () => {
     const url = "https://tdsb.service-now.com/tswp";
-    const cookiesString = DATA.COOKIES;
-    const cookies = JSON.parse(cookiesString);
+    const cookies = DATA.COOKIES;
 
     const browser = await puppeteer.launch({
       headless: true,
@@ -79,7 +78,7 @@ exports.healthComplete = async (message, context) => {
 
   let sendNotification = async (message) => {
     const data = JSON.stringify({
-      status: `$message`,
+      status: `${message}`,
     });
 
     const options = {
